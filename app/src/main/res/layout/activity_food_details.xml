@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/image_view_button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:elevation="20dp"
+            app:elevationOverlayColor="#FE724C"
+            app:layout_constraintStart_toStartOf="@+id/materialCardView"
+            app:layout_constraintTop_toTopOf="@+id/materialCardView"
+            app:srcCompat="@drawable/arrow_back_with_background" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="24dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/tacos_image" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_view_food_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="Ground Beef Tacos"
+            android:textColor="#323643"
+            android:textSize="28sp"
+            app:fontFamily="@font/sofia_pro_bold"
+            app:layout_constraintStart_toStartOf="@+id/materialCardView"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layout_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/text_view_food_title"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_food_title">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/sic_star" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:text="4.5"
+                android:textColor="#111719"
+                android:textStyle="bold"
+                app:fontFamily="@font/sofia_pro_regular" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="4dp"
+                android:text="(30+)"
+                android:textColor="#9796A1"
+                app:fontFamily="@font/sofia_pro_regular" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="4dp"
+                android:text="See Review"
+                android:textColor="#FE724C"
+                android:textSize="13sp"
+                app:fontFamily="@font/sofia_pro_regular" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_view_dollar_sign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="5dp"
+            android:text="$"
+            android:textColor="#FE724C"
+            android:textSize="13sp"
+            app:fontFamily="@font/sofia_pro_regular"
+            app:layout_constraintBottom_toBottomOf="@+id/text_view_dollar_price"
+            app:layout_constraintStart_toStartOf="@+id/layout_review" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_view_dollar_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="9.50"
+            android:textColor="#FE724C"
+            android:textSize="24sp"
+            app:fontFamily="@font/sofia_pro_bold"
+            app:layout_constraintStart_toEndOf="@+id/text_view_dollar_sign"
+            app:layout_constraintTop_toBottomOf="@+id/layout_review" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layout_qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintBottom_toBottomOf="@+id/text_view_dollar_price"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/text_view_dollar_price">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_minus" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:text="02"
+                android:textColor="#111719"
+                android:textStyle="bold"
+                app:fontFamily="@font/sofia_pro_regular" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:src="@drawable/ic_plus" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_view_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:lineSpacingExtra="8sp"
+            android:text="Brown the beef better. Lean ground beef – I like to use 85% lean angus. Garlic – use fresh  chopped. Spices – chili powder, cumin, onion powder."
+            android:textColor="#858992"
+            android:textSize="15sp"
+            app:fontFamily="@font/sofia_pro_regular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_dollar_price" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_view_select_choice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:text="Choice of Add On"
+            android:textColor="#323643"
+            android:textSize="18sp"
+            app:fontFamily="@font/sofia_pro_bold"
+            app:layout_constraintStart_toStartOf="@+id/text_view_description"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_description" />
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layout_selections"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@+id/text_view_description"
+            app:layout_constraintStart_toStartOf="@+id/text_view_select_choice"
+            app:layout_constraintTop_toBottomOf="@+id/text_view_select_choice">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/appCompatImageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/paper_image" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_view_select_choice_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:text="Pepper  Julienned"
+                    android:textColor="#323643"
+                    app:fontFamily="@font/sofia_pro_regular"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/appCompatImageView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_view_select_choice_price_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="16dp"
+                    android:text="+$2.30"
+                    android:textColor="#323643"
+                    app:fontFamily="@font/sofia_pro_regular"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/materialRadioButton"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/materialRadioButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:button="@drawable/radio_button_selector"
+                    android:checked="true"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/appCompatImageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/spanich_image" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_view_select_choice_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:text="Baby Spinach"
+                    android:textColor="#323643"
+                    app:fontFamily="@font/sofia_pro_regular"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/appCompatImageView2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_view_select_choice_price_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="16dp"
+                    android:text="+$4.70"
+                    android:textColor="#323643"
+                    app:fontFamily="@font/sofia_pro_regular"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/materialRadioButton2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/materialRadioButton2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:button="@drawable/radio_button_selector"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/appCompatImageView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/mushrom_image" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_view_select_choice_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="16dp"
+                    android:text="Masroom"
+                    android:textColor="#323643"
+                    app:fontFamily="@font/sofia_pro_regular"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/appCompatImageView3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/text_view_select_choice_price_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="16dp"
+                    android:text="+$2.50"
+                    android:textColor="#323643"
+                    app:fontFamily="@font/sofia_pro_regular"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/materialRadioButton3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.radiobutton.MaterialRadioButton
+                    android:id="@+id/materialRadioButton3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:button="@drawable/radio_button_selector"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/sofia_pro_regular"
+            android:paddingVertical="15dp"
+            android:text="Add To Cart"
+            android:textSize="15sp"
+            app:cornerRadius="100dp"
+            app:elevation="10dp"
+            app:elevationOverlayColor="#FE724C"
+            app:icon="@drawable/ic_cart"
+            app:iconTintMode="multiply"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/layout_selections"
+            app:layout_constraintStart_toStartOf="@+id/layout_selections"
+            app:layout_constraintTop_toBottomOf="@+id/layout_selections" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
