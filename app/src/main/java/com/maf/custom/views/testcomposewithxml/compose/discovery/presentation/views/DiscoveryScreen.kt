@@ -1,5 +1,7 @@
 package com.maf.custom.views.testcomposewithxml.compose.discovery.presentation.views
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,11 +19,10 @@ import androidx.compose.ui.unit.sp
 import com.maf.custom.views.testcomposewithxml.R
 import com.maf.custom.views.testcomposewithxml.compose.discovery.presentation.model.DiscoveryIntent
 import com.maf.custom.views.testcomposewithxml.compose.discovery.presentation.model.DiscoveryStateModel
-import com.maf.custom.views.testcomposewithxml.compose.shared.model.DataStateModel
 
 @Composable
-fun MainDiscoverScreen(
-    state: DiscoveryStateModel,
+fun DiscoveryScreen(
+    state: DiscoveryStateModel?,
     onIntent: (DiscoveryIntent) -> Unit = {}
 ) {
     Surface(
@@ -52,14 +53,17 @@ fun MainDiscoverScreen(
                     DiscoveryList(onIntent)
                 }
             }
+
+            else -> {}
         }
     }
 }
 
+@RequiresApi(Build.VERSION_CODES.TIRAMISU)
 @Preview(showBackground = true)
 @Composable
 fun MainDiscoveryScreenPreview() {
-    MainDiscoverScreen(
+    DiscoveryScreen(
         state = DiscoveryStateModel.Success("")
     )
 }

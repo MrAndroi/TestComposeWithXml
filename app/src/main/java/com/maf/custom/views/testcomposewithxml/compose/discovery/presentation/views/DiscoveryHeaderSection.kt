@@ -78,9 +78,6 @@ fun DiscoveryHeader(
             showCartImage = true,
             onBackClick = {
                 onIntent(DiscoveryIntent.OnBackClick)
-            },
-            onCartClick = {
-                onIntent(DiscoveryIntent.OnCartClick)
             }
         )
     }

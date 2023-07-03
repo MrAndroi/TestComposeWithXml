@@ -3,19 +3,18 @@
     <style name="Theme.TestComposeWithXml" parent="Theme.MaterialComponents.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorSurface">@color/white</item>
-        <item name="colorPrimary">#FE724C</item>
-        <item name="colorPrimaryVariant">#FE724C</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#FE724C</item>
-        <item name="colorSecondaryVariant">#FE724C</item>
+        <item name="colorSecondary">@color/primary</item>
+        <item name="colorSecondaryVariant">@color/primary</item>
         <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
 
-        <item name="errorTextStyle">@style/Theme.TestComposeWithXml.ErrorTextStyle</item>
-
-        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@color/primary</item>
+        <item name="android:windowContentOverlay">@null</item>
     </style>
     
 
@@ -31,6 +30,11 @@
     <style name="Theme.TestComposeWithXml.ErrorTextStyle" parent="Widget.MaterialComponents.TextView">
         <item name="android:textSize">25sp</item>
         <item name="android:textColor">@color/red</item>
+    </style>
+
+    <style name="FullScreenTheme"  parent="Theme.TestComposeWithXml">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
     
 </resources>

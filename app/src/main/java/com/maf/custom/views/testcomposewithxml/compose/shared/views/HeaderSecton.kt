@@ -22,6 +22,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -37,7 +38,6 @@ fun HeaderSection(
     showCartImage: Boolean = false,
     title: String = "",
     onBackClick: () -> Unit = { },
-    onCartClick: () -> Unit = { },
 ) {
     Surface(
         color = Color.Transparent
@@ -46,7 +46,7 @@ fun HeaderSection(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(20.dp),
-            horizontalArrangement = Arrangement.SpaceBetween,
+            horizontalArrangement = Arrangement.Start,
             verticalAlignment = Alignment.CenterVertically
         ) {
             Visibility(visible = showBack) {
@@ -70,16 +70,9 @@ fun HeaderSection(
                     text = title,
                     fontSize = 18.sp,
                     fontFamily = FontFamily(Font(R.font.sofia_pro_regular, FontWeight.SemiBold)),
-                    color = Color(0xFF111719)
-                )
-            }
-            Visibility(visible = showCartImage, visibilityType = VisibilityType.GONE) {
-                Image(
-                    painter = painterResource(id = R.drawable.ic_cart),
-                    contentDescription = "",
-                    modifier = Modifier
-                        .size(38.dp)
-                        .clickable { onCartClick() }
+                    color = Color(0xFF111719),
+                    modifier = Modifier.fillMaxWidth(),
+                    textAlign = TextAlign.Center
                 )
             }
         }
@@ -87,7 +80,7 @@ fun HeaderSection(
 }
 
 
-@Preview(showBackground = true)
+@Preview(showBackground = true, backgroundColor = 0xFFFFFFFF)
 @Composable
 fun HeaderSectionPreview() {
     HeaderSection(

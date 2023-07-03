@@ -22,12 +22,11 @@ import com.maf.custom.views.testcomposewithxml.R
 import com.maf.custom.views.testcomposewithxml.compose.cart.data.model.CartModel
 import com.maf.custom.views.testcomposewithxml.compose.cart.presentation.model.CartIntent
 import com.maf.custom.views.testcomposewithxml.compose.cart.presentation.model.CartStateModel
-import com.maf.custom.views.testcomposewithxml.compose.shared.model.DataStateModel
 import com.maf.custom.views.testcomposewithxml.compose.shared.views.HeaderSection
 
 @Composable
-fun MainCartScreen(
-    cartState: CartStateModel,
+fun CartScreen(
+    cartState: CartStateModel?,
     onIntent: ((CartIntent) -> Unit) = { }
 ) {
     Surface {
@@ -93,6 +92,8 @@ fun MainCartScreen(
                 }
 
             }
+
+            else -> {}
         }
     }
 }
@@ -100,7 +101,7 @@ fun MainCartScreen(
 @Preview(showBackground = true)
 @Composable
 fun MainCartScreenPreview() {
-    MainCartScreen(
+    CartScreen(
         CartStateModel.Success(
             data = listOf(
                 CartModel(

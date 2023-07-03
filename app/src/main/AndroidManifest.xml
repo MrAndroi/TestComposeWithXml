@@ -17,7 +17,7 @@
 
 
         <activity
-            android:name=".compose.discovery.presentation.DiscoverActivity"
+            android:name=".compose.splash.presentation.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait">
 
@@ -29,15 +29,30 @@
         </activity>
 
         <activity
+            android:name=".compose.home.presentation.HomeActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+
+        </activity>
+
+        <activity
             android:name=".xml.FoodDetailsActivity"
             android:exported="true"
             android:screenOrientation="portrait"/>
 
         <activity
-            android:name=".compose.cart.presentation.CartActivity"
+            android:name=".compose.welcome.presentation.WelcomeActivity"
             android:exported="true"
+            android:theme="@style/FullScreenTheme"
             android:screenOrientation="portrait">
 
+        </activity>
+
+        <activity
+            android:name=".compose.signup.presentation.SignUpActivity"
+            android:exported="true"
+            android:theme="@style/FullScreenTheme"
+            android:screenOrientation="portrait">
 
         </activity>
 
