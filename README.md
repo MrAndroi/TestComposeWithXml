@@ -9,7 +9,7 @@ Check out the app in action: [https://s12.gifyu.com/images/SQGTG.gif]
 
 ## Purpose
 
-The primary objective of the FoodHub app is to provide developers with a practical example of how XML and Compose can be combined effectively in an Android project. By exploring the codebase, you will gain insights into the best practices and techniques used to integrate XML and Compose UI components cohesively.
+The primary objective of the FoodHub app is to provide developers with example of how XML and Compose can be combined effectively in an Android project. By exploring the codebase, you will gain insights into the best practices and techniques used to integrate XML and Compose UI components cohesively.
 
 ## Features
 
