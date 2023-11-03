@@ -15,6 +15,7 @@ import androidx.compose.material.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
@@ -26,15 +27,16 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.hilt.navigation.compose.hiltViewModel
 import com.maf.custom.views.testcomposewithxml.R
 import com.maf.custom.views.testcomposewithxml.compose.discovery.presentation.model.DiscoveryIntent
 import com.maf.custom.views.testcomposewithxml.compose.shared.views.HeaderSection
 
 @Composable
 fun DiscoveryHeader(
-    onIntent: (DiscoveryIntent) -> Unit = {}
+    onIntent: (DiscoveryIntent) -> Unit = {},
+    scrollState: Int = 0,
 ) {
+
     Surface {
         Row(
             Modifier.fillMaxWidth(),
@@ -67,10 +69,16 @@ fun DiscoveryHeader(
 
             }
             Image(
-                painter = painterResource(id = R.drawable.corner_pizza),
+                painter = painterResource(id = R.drawable.circle_pizza_image),
                 contentDescription = "",
                 modifier = Modifier
-                    .size(width = 350.dp, height = 220.dp),
+                    .size(width = 350.dp, height = 220.dp)
+                    .graphicsLayer {
+                        rotationZ = -scrollState.toFloat()
+                        translationX = 200f
+                        translationY = -200f
+
+                    },
                 contentScale = ContentScale.FillBounds
             )
         }

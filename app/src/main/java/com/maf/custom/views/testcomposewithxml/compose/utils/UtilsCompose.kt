@@ -1,6 +1,10 @@
 package com.maf.custom.views.testcomposewithxml.compose.utils
 
+import android.content.Context
+import android.content.Intent
 import android.content.res.Resources.getSystem
+import android.net.Uri
+import android.provider.Settings
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
@@ -12,6 +16,8 @@ import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
+import androidx.core.content.ContextCompat
+
 
 /**
  * @param visible if false content is invisible ie. space is still occupied
@@ -47,7 +53,14 @@ fun Int.pxToDp(): Dp {
     return (this / getSystem().displayMetrics.density).dp
 }
 
-enum class VisibilityType{
+fun Context.openAppSettings() {
+    val intent = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS)
+    val uri = Uri.fromParts("package", packageName, null)
+    intent.data = uri
+    ContextCompat.startActivity(this, intent, null)
+}
+
+enum class VisibilityType {
     INVISIBLE,
     GONE
 }

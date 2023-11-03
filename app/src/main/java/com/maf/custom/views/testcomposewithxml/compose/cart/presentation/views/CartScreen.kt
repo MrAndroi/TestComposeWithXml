@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.CircularProgressIndicator
 import androidx.compose.material.Surface
@@ -29,7 +30,7 @@ fun CartScreen(
     cartState: CartStateModel?,
     onIntent: ((CartIntent) -> Unit) = { }
 ) {
-    Surface {
+    Surface(modifier = Modifier.padding(bottom = 50.dp)) {
         when (cartState) {
             CartStateModel.Loading -> {
                 Box(modifier = Modifier.fillMaxSize()) {

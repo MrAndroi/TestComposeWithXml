@@ -2,11 +2,8 @@ package com.maf.custom.views.testcomposewithxml.compose.home.presentation.views
 
 import android.annotation.SuppressLint
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.EnterTransition
 import androidx.compose.animation.expandIn
-import androidx.compose.animation.fadeIn
 import androidx.compose.animation.shrinkOut
-import androidx.compose.animation.slideIn
 import androidx.compose.material.BottomSheetState
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Scaffold

@@ -41,7 +41,7 @@ class CartViewModel @Inject constructor(
     private fun getCartItems() = viewModelScope.launch {
         _cartItemsState.value = CartStateModel.Loading
         try {
-            delay(3000)
+            delay(2000)
             _cartItemsState.value = CartStateModel.Success(getCartItemsUseCase(), getCartItemsTotalPriceUseCase())
         } catch (e: Exception) {
             _cartItemsState.value = CartStateModel.Error(e.message!!)
@@ -51,7 +51,7 @@ class CartViewModel @Inject constructor(
     fun removeCartItem(cartModel: CartModel) = viewModelScope.launch {
         _cartItemsState.value = CartStateModel.Loading
         try {
-            delay(3000)
+            delay(1000)
             removeCartItemUseCase(cartModel)
             _cartItemsState.value = CartStateModel.Success(getCartItemsUseCase(), getCartItemsTotalPriceUseCase())
         } catch (e: Exception) {

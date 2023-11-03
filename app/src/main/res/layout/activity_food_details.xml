@@ -120,6 +120,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
+            android:rotation="360"
             android:text="9.50"
             android:textColor="#FE724C"
             android:textSize="24sp"

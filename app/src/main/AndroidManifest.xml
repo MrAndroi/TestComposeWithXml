@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:name=".TestApp"
         android:allowBackup="true"
@@ -11,9 +14,9 @@
         android:icon="@drawable/food_hub_logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:configChanges="uiMode"
         android:theme="@style/Theme.TestComposeWithXml"
         tools:targetApi="31">
-
 
         <activity
             android:name=".compose.splash.presentation.SplashActivity"
@@ -54,6 +57,8 @@
             android:screenOrientation="portrait">
 
         </activity>
+
+        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDwDIQX9CL_Hq6KHuZ2tPfHmOB-Fdt8SNE"/>
 
     </application>
 

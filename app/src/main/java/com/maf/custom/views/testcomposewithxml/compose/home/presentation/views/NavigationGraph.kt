@@ -13,6 +13,7 @@ import com.maf.custom.views.testcomposewithxml.compose.discovery.presentation.Di
 import com.maf.custom.views.testcomposewithxml.compose.discovery.presentation.views.DiscoveryRoute
 import com.maf.custom.views.testcomposewithxml.compose.discovery.presentation.views.DiscoveryScreen
 import com.maf.custom.views.testcomposewithxml.compose.home.presentation.model.BottomNavItem
+import com.maf.custom.views.testcomposewithxml.compose.loaction.presentation.views.LocationScreen
 import com.maf.custom.views.testcomposewithxml.compose.profile.presentation.ProfileViewModel
 import com.maf.custom.views.testcomposewithxml.compose.profile.presentation.views.ProfileRoute
 import com.maf.custom.views.testcomposewithxml.compose.profile.presentation.views.ProfileScreen
@@ -32,6 +33,7 @@ fun NavigationGraph(
             DiscoveryRoute(sheetState = sheetState, viewModel = discoveryViewModel)
         }
         composable(BottomNavItem.Location.screen_route) {
+            LocationScreen()
         }
         composable(BottomNavItem.Cart.screen_route) {
             CartRoute(viewModel = cartViewModel)

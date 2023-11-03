@@ -22,7 +22,7 @@ class ValidateSignUpFormUseCase @Inject constructor() {
             return SignUpErrorState.Email
         }
 
-        if (password.isBlank() || !password.matches(passwordRegex)) {
+        if (password.isBlank()) {
             return SignUpErrorState.Password
         }
 
